@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Digital Library</title>
+  <link rel="stylesheet" href="aboutus.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="toggle-theme" onclick="toggleDarkMode()">🌓</div>
+
+  <div class="navbar">
+    <div class="logo">📘 Digital Library</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="supportus.html">Support</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </div>
+
+  <header class="about-hero">
+    <h1>Our Mission 📖</h1>
+    <p>Empowering learners through free and easy access to knowledge.</p>
+  </header>
+
+  <section class="team-section">
+    <h2>🌟 Meet Our Team</h2>
+    <div class="team-members">
+      <div class="member-card">
+        <h3>Shwetha</h3>
+        <p>Founder & Developer</p>
+      </div>
+      <div class="member-card">
+        <h3>Uday prakash</h3>
+        <p>Design Lead</p>
+      </div>
+      <div class="member-card">
+        <h3>Kavin Maaran</h3>
+        <p>Content Manager</p>
+      </div>
+      <div class="member-card">
+        <h3>chitra</h3>
+        <p>project Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>

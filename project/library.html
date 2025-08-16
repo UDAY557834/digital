@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Library - Bookmarked Books</title>
+  <link rel="stylesheet" href="library.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>My Bookmarked Books</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="supportus.html">Support</a>
+    </nav>
+  </header>
+
+  <main id="libraryGrid">
+    <!-- Bookmarked books will be dynamically added here -->
+  </main>
+
+  <p id="emptyMessage">You haven't saved any books yet. 📚</p>
+
+  <script>
+  const books = {
+    book1: {
+      title: "The Sea of Monsters",
+      author: "Rick Riordan",
+      image: "sea.jpg",
+      pdf: "02-The Sea of Monster",
+      rating: "⭐⭐⭐⭐☆",
+      category: "fiction"
+    },
+    book2: {
+      title: "Blood of Olympus",
+      author: "Rick Riordan",
+      image: "blood.jpg",
+      pdf: "blood.pdf",
+      rating: "⭐⭐⭐⭐⭐",
+      category: "fiction"
+    },
+    book3: {
+      title: "The Dragon Reborn",
+      author: "Robert Jordan",
+      image: "dragon.jpg",
+      pdf: "dragon.pdf",
+      rating: "⭐⭐⭐⭐☆",
+      category: "fantasy"
+    },
+    book4: {
+      title: "Ender's Game",
+      author: "Orson Scott Card",
+      image: "game.jpg",
+      pdf: "game.pdf",
+      rating: "⭐⭐⭐⭐⭐",
+      category: "sci-fi"
+    },
+    book5: {
+      title: "Romeo and Juliet",
+      author: "William Shakespeare",
+      image: "Romeo-and-juliet-book-cover.webp",
+      pdf: "Romeo and Juliet by William Shakespeare.pdf",
+      rating: "⭐⭐⭐⭐☆",
+      category: "love"
+    },
+    book6: {
+      title: "The Fault in Our Stars",
+      author: "John Green",
+      image: "817tHNcyAgL.jpg",
+      pdf: "The_Fault_in_Our_Stars.pdf",
+      rating: "⭐⭐⭐⭐☆",
+      category: "love"
+    },
+    book7: {
+      title: "The Godfather",
+      author: "Mario Puzo",
+      image: "71uUx073fcL._UF1000,1000_QL80_.jpg",
+      pdf: "The_Godfather-Mario_Puzo.pdf",
+      rating: "⭐⭐⭐⭐☆",
+      category: "romance"
+    },
+    book8: {
+      title: "The Pearl",
+      author: "John Steinbeck",
+      image: "pearl.jpg",
+      pdf: "The-Pearl-John-Steinbeck.pdf",
+      rating: "⭐⭐⭐⭐☆",
+      category: "fiction"
+    },
+    book9: {
+      title: "Alice's Adventures in Wonderland",
+      author: "Lewis Carroll",
+      image: "alice-s-adventures-in-wonderland-201.jpg",
+      pdf: "Alice_s_Adventures_in_Wonderland.pdf",
+      rating: "⭐⭐⭐⭐☆",
+      category: "fiction"
+    },
+    book10: {
+      title: "Artificial Intelligence: A Guide for Thinking Humans",
+      author: "Melanie Mitchell",
+      image: "ai.jpeg",
+      pdf: "ai.pdf",
+      rating: "⭐⭐⭐⭐☆",
+      category: "science"
+    },
+      book11: {
+      title: "History of college writing",
+      author: "Nathan Shepley",
+      image: "history.jpeg",
+      pdf: "history.pdf",
+      rating: "⭐⭐⭐⭐☆",
+      category: "fiction"
+    },
+  };
+
+    function loadBookmarks() {
+      const saved = JSON.parse(localStorage.getItem("bookmarks") || "[]");
+      const grid = document.getElementById("libraryGrid");
+      const empty = document.getElementById("emptyMessage");
+
+      if (saved.length === 0) {
+        empty.style.display = "block";
+        return;
+      }
+
+      empty.style.display = "none";
+
+      saved.forEach(id => {
+        const book = books[id];
+        if (book) {
+          const card = document.createElement("div");
+          card.className = "book-card";
+          card.innerHTML = `
+            <img src="${book.image}" alt="${book.title}" />
+            <h3>${book.title}</h3>
+            <p>${book.author}</p>
+            <div class="stars">${book.rating}</div>
+            <a href="${book.pdf}" target="_blank">📖 Read</a>
+            <button onclick="removeBookmark('${id}')">❌ Remove</button>
+          `;
+          grid.appendChild(card);
+        }
+      });
+    }
+
+    function removeBookmark(id) {
+      let saved = JSON.parse(localStorage.getItem("bookmarks") || "[]");
+      saved = saved.filter(item => item !== id);
+      localStorage.setItem("bookmarks", JSON.stringify(saved));
+      location.reload();
+    }
+
+    window.onload = loadBookmarks;
+  </script>
+</body>
+</html>
+

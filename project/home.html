@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Library - Home</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Background Video -->
+  <video autoplay muted zoom in zoom out loop id="bg-video">
+    <source src="Video 2025-07-30 at 17.48.23_94a85d36.mp4" type="video/mp4">
+  </video>
+
+  <!-- Navbar -->
+  <header>
+    <h1>Digital Library</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="supportus.html">Support</a>
+      <a href="login.html">Login</a>
+      <a href="library.html">Library</a>
+      <button id="darkModeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Search and Filter -->
+  <section class="search-filter">
+    <input type="text" id="searchInput" placeholder="Search books...">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="fiction">Fiction</option>
+      <option value="science">Science</option>
+      <option value="history">History</option>
+      <option value="love">Love</option>
+    </select>
+  </section>
+
+  <!-- Book Cards -->
+  <main id="bookGrid">
+    <div class="book-card" data-category="fiction">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="sea.jpg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="sea.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book1')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <!-- Add more book cards here -->
+         <div class="book-card" data-category="fiction">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="blood.jpg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="blood.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book2')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-card" data-category="fiction">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="dragon.jpg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="dragon.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book3')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-card" data-category="fiction">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="game.jpg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="game.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book4')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-card" data-category="love">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="Romeo-and-juliet-book-cover.webp" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="Romeo and Juliet by William Shakespeare.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book5')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-card" data-category="love">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="817tHNcyAgL.jpg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="The_Fault_in_Our_Stars.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book6')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-card" data-category="romance">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="71uUx073fcL._UF1000,1000_QL80_.jpg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>The God Father</h3>
+          <p>Mario puzo</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="The_Godfather-Mario_Puzo.pdfThe_Godfather-Mario_Puzo.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book7')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-card" data-category="fiction">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="pearl.jpg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="The-Pearl-John-Steinbeck.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book8')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-card" data-category="fiction">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="alice-s-adventures-in-wonderland-201.jpg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="Alice_s_Adventures_in_Wonderland.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book9')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+       <div class="book-card" data-category="science">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="ai.jpeg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="ai.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book10')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-card" data-category="history">
+      <div class="book-inner">
+        <div class="book-front">
+          <img src="history.jpeg" alt="Book Cover">
+        </div>
+        <div class="book-back">
+          <h3>Book Title</h3>
+          <p>Author Name</p>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <a href="history.pdf" target="_blank">Read</a>
+          <button onclick="bookmark('book11')">🔖 Save</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    // Preloader
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
+    });
+
+    // Dark Mode
+    const toggleBtn = document.getElementById("darkModeToggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+
+    // Search
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const value = this.value.toLowerCase();
+      document.querySelectorAll(".book-card").forEach(card => {
+        const title = card.innerText.toLowerCase();
+        card.style.display = title.includes(value) ? "block" : "none";
+      });
+    });
+
+    // Filter
+    document.getElementById("categoryFilter").addEventListener("change", function () {
+      const value = this.value;
+      document.querySelectorAll(".book-card").forEach(card => {
+        if (value === "all" || card.dataset.category === value) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+
+    // Bookmark Save
+    function bookmark(bookId) {
+      let saved = JSON.parse(localStorage.getItem("bookmarks") || "[]");
+      if (!saved.includes(bookId)) {
+        saved.push(bookId);
+        localStorage.setItem("bookmarks", JSON.stringify(saved));
+        alert("Book saved!");
+      } else {
+        alert("Book already saved!");
+      }
+    }
+  </script>
+</body>
+</html>

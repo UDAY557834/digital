@@ -1,0 +1,29 @@
+body { font-family: 'Poppins', sans-serif; margin: 0; background: linear-gradient(to right, #ece9e6, #ffffff); color: #333; }
+
+header { background-color: #3f51b5; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+
+header h1 { margin: 0; font-size: 1.8rem; }
+
+nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+
+nav a:hover { color: #ffeb3b; }
+
+#libraryGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
+
+.book-card { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); padding: 1rem; text-align: center; transition: transform 0.3s ease; }
+
+.book-card:hover { transform: scale(1.03); }
+
+.book-card img { width: 25%; height: 200px; object-fit: cover; border-radius: 8px; }
+
+.book-card h3 { margin: 10px 0 5px; font-size: 1.2rem; color: #3f51b5; }
+
+.book-card p { margin: 0; font-size: 0.9rem; color: #666; }
+
+.stars { margin: 0.5rem 0; color: #ffc107; font-size: 1.1rem; }
+
+.book-card a, .book-card button { display: inline-block; margin: 5px; padding: 8px 12px; border: none; border-radius: 20px; text-decoration: none; color: white; background-color: #3f51b5; cursor: pointer; font-size: 0.9rem; transition: background 0.3s ease; }
+
+.book-card button:hover, .book-card a:hover { background-color: #303f9f; }
+
+#emptyMessage { text-align: center; color: #888; font-size: 1rem; padding: 2rem; display: none; }

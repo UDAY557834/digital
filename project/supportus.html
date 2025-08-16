@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support - Digital Library</title>
+  <link rel="stylesheet" href="supportus.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="toggle-theme" onclick="toggleDarkMode()">🌓</div>
+
+  <div class="navbar">
+    <div class="logo">📘 Digital Library</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="supportus.html">Support</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </div>
+
+  <header class="support-hero">
+    <h1>Need Help? 💬</h1>
+    <p>We’re always here to support your reading journey.</p>
+  </header>
+
+  <section class="contact-section">
+    <h2>📨 Contact Us</h2>
+    <form class="contact-form">
+      <div class="input-group">
+        <input type="text" required>
+        <label>Name</label>
+      </div>
+      <div class="input-group">
+        <input type="email" required>
+        <label>Email</label>
+      </div>
+      <div class="input-group">
+        <textarea rows="5" required></textarea>
+        <label>Message</label>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section class="faq-section">
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <h3>How do I download books?</h3>
+        <p>Click on the book cover from the Home page to open the PDF in a new tab.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <h3>Can I access it without logging in?</h3>
+        <p>Yes! Login is optional. But logging in helps track your reading.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <h3>Is it free forever?</h3>
+        <p>Yes, this library is fully free and open to everyone forever.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    function toggleFAQ(element) {
+      element.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
